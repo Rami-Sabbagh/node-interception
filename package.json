@@ -1,0 +1,16 @@
+{
+  "name": "interception",
+  "version": "0.1.0",
+  "description": "A windows library for intercepting and controlling keyboards and mouses with multiple devices support.",
+  "main": "lib/index.ts",
+  "author": "Rami Sabbagh <ramilego4game@gmail.com>",
+  "license": "LGPL-3.0-or-later",
+  "private": false,
+  "gypfile": true,
+  "devDependencies": {
+    "node-gyp": "^8.1.0"
+  },
+  "dependencies": {
+    "node-addon-api": "^4.0.0"
+  }
+}

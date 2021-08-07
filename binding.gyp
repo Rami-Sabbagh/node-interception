@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "addon",
+      "target_name": "node_interception",
       "sources": [
         "src/binding.cc"
       ],

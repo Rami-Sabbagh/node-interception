@@ -42,7 +42,9 @@ export default class Device<TStroke extends Stroke = Stroke> {
     }
 
     getHardwareId(): string | null {
-        return interception.getHardwareId(this.context, this.id);
+        return interception.getHardwareId(this.context, this.id)
+            ?.replace(/\x00\x00$/, '')?.replace(/\x00/gi, ', ')
+            ?? null;
     }
 
     isMouse(): this is Mouse {

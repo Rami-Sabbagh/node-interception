@@ -134,6 +134,10 @@ export interface InterceptionNative {
      * Any further api calls using this context would instantly fail or result with unknown behaviour.
      */
     destroyContext(context: Context): void;
+    /**
+     * Checks whether if a context is already destoyed or not.
+     */
+    isContextDestroyed(context: Context): boolean;
 
     /**
      * Gets the precedence (priority) which this context has for that specific device.

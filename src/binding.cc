@@ -58,6 +58,16 @@ void DestroyContext(const CallbackInfo& info) {
   *context = nullptr;
 }
 
+Value IsContextDestroyed(const CallbackInfo& info) {
+  Env env = info.Env();
+
+  if (info.Length() < 1) throw TypeError::New(env, "Wrong number of arguments");
+  if (!info[0].IsExternal()) throw TypeError::New(env, "Invalid 'context' value");
+
+  InterceptionContext context = info[0].As<External<InterceptionContext>>().Data();
+  return Boolean::New(env, context == nullptr);
+}
+
 Value GetPrecedence(const CallbackInfo& info) {
   Env env = info.Env();
 
@@ -331,6 +341,7 @@ Value IsMouse(const CallbackInfo& info) {
 Object Init(Env env, Object exports) {
   exports.Set("createContext", Function::New<CreateContext>(env, "interception_create_context"));
   exports.Set("destroyContext", Function::New<DestroyContext>(env, "interception_destroy_context"));
+  exports.Set("isContextDestroyed", Function::New<IsContextDestroyed>(env, "node_inteception_is_context_destroyed"));
   exports.Set("getPrecedence", Function::New<GetPrecedence>(env, "interception_get_precedence"));
   exports.Set("setPrecedence", Function::New<SetPrecedence>(env, "interception_set_precedence"));
   exports.Set("getFilter", Function::New<GetFilter>(env, "interception_get_filter"));

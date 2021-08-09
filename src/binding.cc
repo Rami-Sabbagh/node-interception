@@ -195,7 +195,6 @@ Value WaitWithTimeoutAsync(const CallbackInfo& info) {
   return promise.Promise();
 }
 
-
 Object wrapStroke(Env& env, InterceptionStroke& stroke, InterceptionDevice device) {
   Object obj = Object::New(env);
 
@@ -241,7 +240,7 @@ void unwrapStroke(Env& env, Object& obj, InterceptionStroke& stroke) {
     mstroke.x = obj.Get("x").ToNumber().Int32Value();
     mstroke.y = obj.Get("y").ToNumber().Int32Value();
     mstroke.information = obj.Get("information").ToNumber().Uint32Value();
-  } else {
+  } else if (type != "invalid") {
     throw TypeError::New(env, "Invalid stroke type");
   }
 }

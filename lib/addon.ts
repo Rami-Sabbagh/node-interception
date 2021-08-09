@@ -179,7 +179,7 @@ export interface InterceptionNative {
     /**
      * Sends a stroke under a specific device.
      */
-    send(context: IContext, device: IDevice, stroke: KeyboardStroke | MouseStroke, nstroke: number): boolean;
+    send(context: IContext, device: IDevice, stroke: Stroke, nstroke: number): boolean;
     /**
      * Receives the stroke sent by a specific device, after waiting for it using one of the wait methods.
      * @returns null on failure.

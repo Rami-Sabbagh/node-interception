@@ -1,6 +1,6 @@
-import interception, { IContext, IDevice, IFilter, Stroke } from './addon';
+import interception, { IContext, IDevice, IFilter, InvalidStroke, KeyboardStroke, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './addon';
 
-export default class Device {
+export class Device<TStroke extends Stroke> {
     constructor(
         private readonly _context: IContext,
         public readonly id: IDevice,
@@ -29,15 +29,36 @@ export default class Device {
         return interception.getFilter(this.context, this.id);
     }
 
-    send(stroke: Stroke, nstroke = 1): boolean {
+    send(stroke: TStroke, nstroke = 1): boolean {
         return interception.send(this.context, this.id, stroke, nstroke);
     }
 
-    receive(nstroke = 1): Stroke | null {
+    receive(nstroke = 1): TStroke | null {
         return interception.receive(this.context, this.id, nstroke);
     }
 
     getHardwareId(): string | null {
         return interception.getHardwareId(this.context, this.id);
+    }
+
+    isMouse(): this is Device<MouseStroke> {
+        return this.id > MAX_KEYBOARD && this.id < MAX_KEYBOARD + MAX_MOUSE;
+    }
+
+    isKeyboard(): this is Device<KeyboardStroke> {
+        return this.id > 0 && this.id < MAX_KEYBOARD;
+    }
+
+    isInvalid(): this is Device<InvalidStroke> {
+        return this.id <= 0 || this.id >= MAX_DEVICE;
+    }
+
+    toString(): string {
+        let type = 'Invalid';
+
+        if (this.isMouse()) type = 'Mouse';
+        else if (this.isKeyboard()) type = 'Keyboard';
+
+        return `[${type} ${this.id}]: ${this.getHardwareId()}`;
     }
 }

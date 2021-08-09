@@ -1,6 +1,10 @@
 import interception, { IContext, IDevice, IFilter, InvalidStroke, KeyboardStroke, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './addon';
 
-export class Device<TStroke extends Stroke> {
+export type Mouse = Device<MouseStroke>;
+export type Keyboard = Device<KeyboardStroke>;
+export type InvalidDevice = Device<InvalidStroke>;
+
+export default class Device<TStroke extends Stroke = Stroke> {
     constructor(
         private readonly _context: IContext,
         public readonly id: IDevice,
@@ -41,15 +45,15 @@ export class Device<TStroke extends Stroke> {
         return interception.getHardwareId(this.context, this.id);
     }
 
-    isMouse(): this is Device<MouseStroke> {
+    isMouse(): this is Mouse {
         return this.id > MAX_KEYBOARD && this.id < MAX_KEYBOARD + MAX_MOUSE;
     }
 
-    isKeyboard(): this is Device<KeyboardStroke> {
+    isKeyboard(): this is Keyboard {
         return this.id > 0 && this.id < MAX_KEYBOARD;
     }
 
-    isInvalid(): this is Device<InvalidStroke> {
+    isInvalid(): this is InvalidDevice {
         return this.id <= 0 || this.id >= MAX_DEVICE;
     }
 

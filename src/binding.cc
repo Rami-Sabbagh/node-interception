@@ -50,7 +50,11 @@ void DestroyContext(const CallbackInfo& info) {
   if (!info[0].IsExternal()) throw TypeError::New(env, "Invalid 'context' value");
 
   InterceptionContext* context = info[0].As<External<InterceptionContext>>().Data();
+
+  interception_set_filter(*context, interception_is_keyboard, INTERCEPTION_FILTER_KEY_NONE);
+  interception_set_filter(*context, interception_is_mouse, INTERCEPTION_FILTER_MOUSE_NONE);
   interception_destroy_context(*context);
+
   *context = nullptr;
 }
 

@@ -1,5 +1,5 @@
 const os = require('os');
-const interception = require('./build/Release/addon.node');
+const interception = require('../build/Release/node_interception.node');
 
 console.log('Setting the process priority to high');
 os.setPriority(os.constants.priority.PRIORITY_HIGH);

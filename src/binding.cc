@@ -336,9 +336,9 @@ Object Init(Env env, Object exports) {
   exports.Set("getFilter", Function::New<GetFilter>(env, "interception_get_filter"));
   exports.Set("setFilter", Function::New<SetFilter>(env, "interception_set_filter"));
   exports.Set("wait", Function::New<Wait>(env, "interception_wait"));
-  exports.Set("waitAsync", Function::New<WaitAsync>(env, "interception_wait_async"));
+  exports.Set("waitAsync", Function::New<WaitAsync>(env, "node_interception_wait_async"));
   exports.Set("waitWithTimeout", Function::New<WaitWithTimeout>(env, "interception_wait_with_timeout"));
-  exports.Set("waitWithTimeoutAsync", Function::New<WaitWithTimeoutAsync>(env, "interception_wait_with_timeout_async"));
+  exports.Set("waitWithTimeoutAsync", Function::New<WaitWithTimeoutAsync>(env, "node_interception_wait_with_timeout_async"));
   exports.Set("send", Function::New<Send>(env, "interception_send"));
   exports.Set("receive", Function::New<Receive>(env, "interception_receive"));
   exports.Set("getHardwareId", Function::New<GetHardwareId>(env, "interception_get_hardware_id"));

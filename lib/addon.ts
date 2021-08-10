@@ -1,4 +1,4 @@
-export type IContext = External;
+export type Context = External;
 export type IDevice = number;
 export type IFilter = number;
 
@@ -128,69 +128,69 @@ export interface InterceptionNative {
     /**
      * Creates an interception context, inorder for executing any api operation.
      */
-    createContext(): IContext;
+    createContext(): Context;
     /**
      * Destroys an interception context, automatically handled when a context is garbage collected.
      * Any further api calls using this context would instantly fail or result with unknown behaviour.
      */
-    destroyContext(context: IContext): void;
+    destroyContext(context: Context): void;
     /**
      * Checks whether if a context is already destoyed or not.
      */
-    isContextDestroyed(context: IContext): boolean;
+    isContextDestroyed(context: Context): boolean;
 
     /**
      * Gets the precedence (priority) which this context has for that specific device.
      */
-    getPrecedence(context: IContext, device: IDevice): number;
+    getPrecedence(context: Context, device: IDevice): number;
     /**
      * Sets the precedence (priority) which this context wants for that specific device.
      */
-    setPrecedence(context: IContext, device: IDevice, precendence: number): void;
+    setPrecedence(context: Context, device: IDevice, precendence: number): void;
 
-    getFilter(context: IContext, device: IDevice): IFilter;
+    getFilter(context: Context, device: IDevice): IFilter;
     /**
      * Sets the stroke events that get intercepted by this instance of the library.
      * Each predicate has it's own filters state, initially set to 0 (NONE).
      */
-    setFilter(context: IContext, predicate: 'keyboard' | 'mouse' | 'invalid', filter: IFilter): void;
+    setFilter(context: Context, predicate: 'keyboard' | 'mouse' | 'invalid', filter: IFilter): void;
 
     /**
      * Waits for a device to send a stroke, or null on failure.
      */
-    wait(context: IContext): IDevice | null;
+    wait(context: Context): IDevice | null;
     /**
      * Waits asynchronously for device to send a stroke, or null on failure.
      * Any call to any wait method would fail until the promise is resolved either with success or failure.
      */
-    waitAsync(context: IContext): Promise<IDevice | null>;
+    waitAsync(context: Context): Promise<IDevice | null>;
 
     /**
      * Waits for a device to send a stroke with a timeout, results with null on failure or timeout.
      * @param timeout in milliseconds.
      */
-    waitWithTimeout(context: IContext, timeout: number): IDevice | null;
+    waitWithTimeout(context: Context, timeout: number): IDevice | null;
     /**
      * Waits asynchronously for a device to send a stroke with a timeout, results with null on failure or timeout.
      * @param timeout in milliseconds.
      */
-    waitWithTimeoutAsync(context: IContext, timeout: number): Promise<IDevice | null>;
+    waitWithTimeoutAsync(context: Context, timeout: number): Promise<IDevice | null>;
 
     /**
      * Sends a stroke under a specific device.
      */
-    send<TStroke extends Stroke>(context: IContext, device: IDevice, stroke: TStroke, nstroke: number): boolean;
+    send<TStroke extends Stroke>(context: Context, device: IDevice, stroke: TStroke, nstroke: number): boolean;
     /**
      * Receives the stroke sent by a specific device, after waiting for it using one of the wait methods.
      * @returns null on failure.
      */
-    receive<TStroke extends Stroke>(context: IContext, device: IDevice, nstroke: number): TStroke | null;
+    receive<TStroke extends Stroke>(context: Context, device: IDevice, nstroke: number): TStroke | null;
 
     /**
      * Gets the hardware id of a specific device, which may help on disambiguation of device input.
      * The hardware ids are not requried to be unique, but mostly will when you have at least two different device models.
      */
-    getHardwareId(context: IContext, device: IDevice): string | null;
+    getHardwareId(context: Context, device: IDevice): string | null;
 
     /**
      * Checks whether a device id is invalid or not.

@@ -1,4 +1,4 @@
-import interception, { IContext, IDevice, IFilter, InvalidStroke, KeyboardStroke, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './addon';
+import interception, { Context, IDevice, IFilter, InvalidStroke, KeyboardStroke, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './addon';
 
 export type Mouse = Device<MouseStroke>;
 export type Keyboard = Device<KeyboardStroke>;
@@ -6,7 +6,7 @@ export type InvalidDevice = Device<InvalidStroke>;
 
 export default class Device<TStroke extends Stroke = Stroke> {
     constructor(
-        private readonly _context: IContext,
+        private readonly _context: Context,
         public readonly id: IDevice,
     ) { }
 

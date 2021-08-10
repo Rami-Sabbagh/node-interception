@@ -13,7 +13,8 @@ export default class Interception {
         interception.setFilter(this.context, type, filter);
     }
 
-    getDevice(id: IDevice): Device {
+    getDevice(id: IDevice): Device | null {
+        if (interception.getHardwareId(this.context, id) === null) return null;
         return new Device(this._context, id);
     }
 

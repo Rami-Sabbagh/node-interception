@@ -77,3 +77,6 @@ typings/
 
 # The addon build directory
 build/
+
+# Typedoc output
+docs/

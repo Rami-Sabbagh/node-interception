@@ -69,5 +69,11 @@
     /* Advanced Options */
     "skipLibCheck": true,                           /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true        /* Disallow inconsistently-cased references to the same file. */
+  },
+  "typedocOptions": {
+    "name": "Node-Interception",
+    "includeVersion": true,
+    "entryPoints": ["lib/index.ts"],
+    "out": "docs"
   }
 }

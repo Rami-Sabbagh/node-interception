@@ -75,8 +75,11 @@ typings/
 # FuseBox cache
 .fusebox/
 
-# The addon build directory
+# Addon build output
 build/
 
-# Typedoc output
+# TypeDoc output
 docs/
+
+# TypeScript output
+dist/

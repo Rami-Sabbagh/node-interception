@@ -26,7 +26,7 @@ jobs:
           node-version: 14.x
 
       - name: Install the dependencies
-        run: yarn
+        run: yarn --ignore-scripts
 
       - name: Generate the documentation
         run: yarn docs

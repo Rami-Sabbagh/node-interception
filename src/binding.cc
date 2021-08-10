@@ -6,7 +6,7 @@ using namespace Napi;
 class WaitWorker : public AsyncWorker {
   public:
     WaitWorker(Promise::Deferred promise, InterceptionContext context, long milliseconds = -1)
-      : AsyncWorker(promise.Env()), promise(promise), context(context), milliseconds(milliseconds), device(0) {}
+      : AsyncWorker(promise.Env()), promise(promise), context(context), device(0), milliseconds(milliseconds) {}
     ~WaitWorker() {}
   
     void Execute() {

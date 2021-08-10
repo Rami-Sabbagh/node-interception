@@ -1,6 +1,6 @@
 export type Context = External;
 export type IDevice = number;
-export type IFilter = number;
+export type Filter = number;
 
 export const MAX_KEYBOARD = 10;
 export const MAX_MOUSE = 10;
@@ -148,12 +148,12 @@ export interface InterceptionNative {
      */
     setPrecedence(context: Context, device: IDevice, precendence: number): void;
 
-    getFilter(context: Context, device: IDevice): IFilter;
+    getFilter(context: Context, device: IDevice): Filter;
     /**
      * Sets the stroke events that get intercepted by this instance of the library.
      * Each predicate has it's own filters state, initially set to 0 (NONE).
      */
-    setFilter(context: Context, predicate: 'keyboard' | 'mouse' | 'invalid', filter: IFilter): void;
+    setFilter(context: Context, predicate: 'keyboard' | 'mouse' | 'invalid', filter: Filter): void;
 
     /**
      * Waits for a device to send a stroke, or null on failure.

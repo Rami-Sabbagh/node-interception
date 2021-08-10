@@ -1,4 +1,4 @@
-import interception, { Context, IDevice, IFilter, InvalidStroke, KeyboardStroke, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './addon';
+import interception, { Context, IDevice, Filter, InvalidStroke, KeyboardStroke, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './addon';
 
 export type Mouse = Device<MouseStroke>;
 export type Keyboard = Device<KeyboardStroke>;
@@ -29,7 +29,7 @@ export default class Device<TStroke extends Stroke = Stroke> {
         interception.setPrecedence(this.context, this.id, precedence);
     }
 
-    getFilter(): IFilter {
+    getFilter(): Filter {
         return interception.getFilter(this.context, this.id);
     }
 

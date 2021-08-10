@@ -4,7 +4,7 @@ export type Mouse = Device<MouseStroke>;
 export type Keyboard = Device<KeyboardStroke>;
 export type InvalidDevice = Device<InvalidStroke>;
 
-export default class Device<TStroke extends Stroke = Stroke> {
+export class Device<TStroke extends Stroke = Stroke> {
     constructor(
         private readonly _context: Context,
         public readonly id: DeviceId,

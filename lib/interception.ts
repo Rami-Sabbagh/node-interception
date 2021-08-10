@@ -1,5 +1,5 @@
 import interception, { DeviceId, Filter, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE } from './addon';
-import Device, { Keyboard, Mouse } from './device';
+import { Device, Keyboard, Mouse } from './device';
 
 export default class Interception {
     constructor(private readonly _context = interception.createContext()) { }

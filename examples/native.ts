@@ -1,6 +1,6 @@
 import * as os from 'os';
 
-import native, { FilterKeyState, FilterMouseState } from '../lib/addon';
+import native, { FilterKeyState, FilterMouseState } from 'interception/native';
 
 os.setPriority(os.constants.priority.PRIORITY_HIGH);
 

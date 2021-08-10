@@ -83,4 +83,8 @@ export default class Interception {
     isDestroyed(): boolean {
         return interception.isContextDestroyed(this._context);
     }
+
+    toString(): string {
+        return `[Interception: ${this._context}]`;
+    }
 }

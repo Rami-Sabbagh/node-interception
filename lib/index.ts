@@ -3,7 +3,7 @@ export {
     KeyState, MouseState,
     MouseStroke, KeyboardStroke, InvalidStroke, Stroke,
     MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE
-} from './addon';
+} from './native';
 
 export { Device, Mouse, Keyboard, InvalidDevice } from './device';
 

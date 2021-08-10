@@ -1,4 +1,4 @@
-import interception, { Context, DeviceId, Filter, InvalidStroke, KeyboardStroke, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './addon';
+import interception, { Context, DeviceId, Filter, InvalidStroke, KeyboardStroke, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './native';
 
 export type Mouse = Device<MouseStroke>;
 export type Keyboard = Device<KeyboardStroke>;

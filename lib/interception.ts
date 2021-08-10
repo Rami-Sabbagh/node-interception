@@ -1,4 +1,4 @@
-import interception, { DeviceId, Filter, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE } from './addon';
+import interception, { DeviceId, Filter, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE } from './native';
 import { Device, Keyboard, Mouse } from './device';
 
 export default class Interception {

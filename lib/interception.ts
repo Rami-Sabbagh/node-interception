@@ -1,4 +1,4 @@
-import interception, { IDevice, Filter, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE } from './addon';
+import interception, { DeviceId, Filter, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE } from './addon';
 import Device, { Keyboard, Mouse } from './device';
 
 export default class Interception {
@@ -13,7 +13,7 @@ export default class Interception {
         interception.setFilter(this.context, type, filter);
     }
 
-    getDevice(id: IDevice): Device | null {
+    getDevice(id: DeviceId): Device | null {
         if (interception.getHardwareId(this.context, id) === null) return null;
         return new Device(this._context, id);
     }

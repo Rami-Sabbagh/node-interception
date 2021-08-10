@@ -1,5 +1,5 @@
 export type Context = External;
-export type IDevice = number;
+export type DeviceId = number;
 export type Filter = number;
 
 export const MAX_KEYBOARD = 10;
@@ -10,12 +10,12 @@ export const MAX_DEVICE = MAX_KEYBOARD + MAX_MOUSE;
  * Gets the device ID of the `i`th keyboard.
  * @param index The number of the keyboard, 0-based, maximum: `MAX_KEYBOARD - 1`.
  */
-export const KEYBOARD = (index: number): IDevice => index + 1;
+export const KEYBOARD = (index: number): DeviceId => index + 1;
 /**
  * Gets the device ID of the `i`th mouse.
  * @param index The number of the mouse, 0-based, maximum: `MAX_MOUSE - 1`.
  */
-export const MOUSE = (index: number): IDevice => MAX_KEYBOARD + index + 1;
+export const MOUSE = (index: number): DeviceId => MAX_KEYBOARD + index + 1;
 
 export enum KeyState {
     DOWN = 0x00,
@@ -142,13 +142,13 @@ export interface InterceptionNative {
     /**
      * Gets the precedence (priority) which this context has for that specific device.
      */
-    getPrecedence(context: Context, device: IDevice): number;
+    getPrecedence(context: Context, device: DeviceId): number;
     /**
      * Sets the precedence (priority) which this context wants for that specific device.
      */
-    setPrecedence(context: Context, device: IDevice, precendence: number): void;
+    setPrecedence(context: Context, device: DeviceId, precendence: number): void;
 
-    getFilter(context: Context, device: IDevice): Filter;
+    getFilter(context: Context, device: DeviceId): Filter;
     /**
      * Sets the stroke events that get intercepted by this instance of the library.
      * Each predicate has it's own filters state, initially set to 0 (NONE).
@@ -158,52 +158,52 @@ export interface InterceptionNative {
     /**
      * Waits for a device to send a stroke, or null on failure.
      */
-    wait(context: Context): IDevice | null;
+    wait(context: Context): DeviceId | null;
     /**
      * Waits asynchronously for device to send a stroke, or null on failure.
      * Any call to any wait method would fail until the promise is resolved either with success or failure.
      */
-    waitAsync(context: Context): Promise<IDevice | null>;
+    waitAsync(context: Context): Promise<DeviceId | null>;
 
     /**
      * Waits for a device to send a stroke with a timeout, results with null on failure or timeout.
      * @param timeout in milliseconds.
      */
-    waitWithTimeout(context: Context, timeout: number): IDevice | null;
+    waitWithTimeout(context: Context, timeout: number): DeviceId | null;
     /**
      * Waits asynchronously for a device to send a stroke with a timeout, results with null on failure or timeout.
      * @param timeout in milliseconds.
      */
-    waitWithTimeoutAsync(context: Context, timeout: number): Promise<IDevice | null>;
+    waitWithTimeoutAsync(context: Context, timeout: number): Promise<DeviceId | null>;
 
     /**
      * Sends a stroke under a specific device.
      */
-    send<TStroke extends Stroke>(context: Context, device: IDevice, stroke: TStroke, nstroke: number): boolean;
+    send<TStroke extends Stroke>(context: Context, device: DeviceId, stroke: TStroke, nstroke: number): boolean;
     /**
      * Receives the stroke sent by a specific device, after waiting for it using one of the wait methods.
      * @returns null on failure.
      */
-    receive<TStroke extends Stroke>(context: Context, device: IDevice, nstroke: number): TStroke | null;
+    receive<TStroke extends Stroke>(context: Context, device: DeviceId, nstroke: number): TStroke | null;
 
     /**
      * Gets the hardware id of a specific device, which may help on disambiguation of device input.
      * The hardware ids are not requried to be unique, but mostly will when you have at least two different device models.
      */
-    getHardwareId(context: Context, device: IDevice): string | null;
+    getHardwareId(context: Context, device: DeviceId): string | null;
 
     /**
      * Checks whether a device id is invalid or not.
      */
-    isInvalid(device: IDevice): boolean;
+    isInvalid(device: DeviceId): boolean;
     /**
      * Checks whether a device id is for a keyboard device or not.
      */
-    isKeyboard(device: IDevice): boolean;
+    isKeyboard(device: DeviceId): boolean;
     /**
      * Checks whether a device id is for a mouse device or not.
      */
-    isMouse(device: IDevice): boolean;
+    isMouse(device: DeviceId): boolean;
 }
 
 const native: InterceptionNative = require('../build/Release/node_interception.node');

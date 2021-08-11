@@ -2,7 +2,7 @@
 import * as os from 'os';
 os.setPriority(os.constants.priority.PRIORITY_HIGH);
 
-import { Interception, FilterKeyState, FilterMouseState } from '../';
+import { Interception, FilterKeyState, FilterMouseState } from '../lib';
 const interception = new Interception();
 
 // Display the list of available devices.

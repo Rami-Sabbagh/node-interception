@@ -1,12 +1,9 @@
 import * as os from 'os';
 os.setPriority(os.constants.priority.PRIORITY_HIGH);
 
-import { Interception, FilterKeyState, FilterMouseState, MouseFlag, MouseState } from '../lib';
+import { Interception, MouseFlag } from '../lib';
 
 const interception = new Interception();
-
-// interception.setFilter('keyboard', FilterKeyState.ALL);
-// interception.setFilter('mouse', FilterMouseState.ALL);
 
 const mouse = interception.getMice()[0];
 if (mouse === undefined) throw new Error('No mice were found');

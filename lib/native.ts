@@ -195,11 +195,7 @@ export type MouseStroke = {
     information: number,
 };
 
-export type InvalidStroke = {
-    type: 'invalid',
-};
-
-export type Stroke = KeyboardStroke | MouseStroke | InvalidStroke;
+export type Stroke = KeyboardStroke | MouseStroke;
 
 export interface InterceptionNative {
     /**

@@ -1,8 +1,7 @@
-import interception, { Context, DeviceId, Filter, InvalidStroke, KeyboardStroke, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './native';
+import interception, { Context, DeviceId, Filter, KeyboardStroke, MAX_KEYBOARD, MAX_MOUSE, MouseStroke, Stroke } from './native';
 
 export type Mouse = Device<MouseStroke>;
 export type Keyboard = Device<KeyboardStroke>;
-export type InvalidDevice = Device<InvalidStroke>;
 
 export class Device<TStroke extends Stroke = Stroke> {
     constructor(
@@ -55,8 +54,8 @@ export class Device<TStroke extends Stroke = Stroke> {
         return this.id > 0 && this.id < MAX_KEYBOARD;
     }
 
-    isInvalid(): this is InvalidDevice {
-        return this.id <= 0 || this.id >= MAX_DEVICE;
+    isInvalid(): boolean {
+        return !this.isMouse() && !this.isKeyboard();
     }
 
     toString(): string {

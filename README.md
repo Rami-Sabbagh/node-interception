@@ -45,6 +45,7 @@ listen().catch(console.error);
 ## Features
 
 - Contains prebuilt binaries for 32-bit (`ia32`) and 64-bit (`x64`) Windows machines.
+- Written using N-API and `node-addon-api` so it should work with different node versions and electron without rebuilding.
 - Written in TypeScript to provide enhanced IDE support.
 - Allows working with each mouse and keyboard as independent devices, so different logic can be used for each keyboard/mouse.
 - Allows blocking or modifying the devices strokes.

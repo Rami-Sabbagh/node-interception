@@ -27,7 +27,7 @@
     "docs": "typedoc",
     "build-lib": "tsc -p tsconfig.json && tsc -p tsconfig-esm.json",
     "build-addon": "prebuildify --napi --arch=ia32 && prebuildify --napi --arch=x64 && node-gyp clean",
-    "prepublishOnly": "yarn prebuild && yarn build"
+    "prepublishOnly": "yarn build-addon && yarn build-lib"
   },
   "bin": {
     "install-interception": "./interception/driver/install-interception.exe"

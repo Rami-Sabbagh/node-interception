@@ -93,6 +93,8 @@ You'll need to **restart** for the driver installation to be complete.
 
 The API documentation is generated using [TypeDoc](https://typedoc.org/) and available on [GitHub Pages](https://rami-sabbagh.github.io/node-interception/).
 
+Don't forget to give the package a star [GitHub](https://github.com/Rami-Sabbagh/node-interception/)!
+
 ## License
 
 The binding and wrapper are licensed under `LGPL-3.0-or-later`, check the `LICENSE` file.

@@ -30,12 +30,15 @@
     "prepublishOnly": "yarn prebuild && yarn build"
   },
   "files": [
+    "dist/",
+    "prebuilds/",
+    "examples/",
+    "binding.gyp",
     "src/",
     "lib/",
-    "examples/",
-    "interception/",
-    "dist/",
-    "binding.gyp"
+    "interception/driver",
+    "interception/LICENSE",
+    "interception/README.md"
   ],
   "devDependencies": {
     "@types/node": "^16.4.13",

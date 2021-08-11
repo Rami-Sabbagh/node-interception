@@ -13,13 +13,13 @@
         "<(module_root_dir)/interception/include",
       ],
       "libraries": [
-        "<(module_root_dir)/interception/x64/interception.lib",
+        "<(module_root_dir)/interception/<(target_arch)/interception.lib",
       ],
       "copies": [
         {
           "destination": "<(module_root_dir)/build/Release/",
           "files": [
-            "<(module_root_dir)/interception/x64/interception.dll",
+            "<(module_root_dir)/interception/<(target_arch)/interception.dll",
           ],
         }
       ],

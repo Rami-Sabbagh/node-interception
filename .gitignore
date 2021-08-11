@@ -83,3 +83,6 @@ docs/
 
 # TypeScript output
 dist/
+
+# Prebuilds
+prebuilds/

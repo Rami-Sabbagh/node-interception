@@ -1,6 +1,6 @@
 import * as os from 'os';
 
-import native, { FilterKeyState, FilterMouseState } from '../lib';
+import native, { FilterKeyState, FilterMouseState } from '../lib/native';
 
 os.setPriority(os.constants.priority.PRIORITY_HIGH);
 

@@ -20,22 +20,60 @@ export const MOUSE = (index: number): DeviceId => MAX_KEYBOARD + index + 1;
 export enum KeyState {
     DOWN = 0x00,
     UP = 0x01,
+    /**
+     * Special key down, such as `delete` or arrow keys.
+     */
     E0 = 0x02,
+    /**
+     * Special key up, such as `delete` or arrow keys.
+     */
     E1 = 0x04,
+    /**
+     * Unknown.
+     */
     TERMSRV_SET_LED = 0x08,
+    /**
+     * Unknown.
+     */
     TERMSRV_SHADOW = 0x10,
+    /**
+     * Unknown.
+     */
     TERMSRV_VKPACKET = 0x20,
 }
 
+/**
+ * Filter the keyboard strokes intercepted by key states.
+ * 
+ * The filter works as a bitfield, so combine flags using bitwise operators:
+ * ```ts
+ * const filter = FilterKeyState.DOWN | FilterKeyState.UP;
+ * ```
+ */
 export enum FilterKeyState {
     NONE = 0x0000,
     ALL = 0xFFFF,
     DOWN = 0x0001,
     UP = 0x0002,
+    /**
+     * Special key down, such as `delete` or arrow keys.
+     */
     E0 = 0x0004,
+    /**
+     * Special key up, such as `delete` or arrow keys.
+     */
     E1 = 0x0008,
+    /**
+     * Unknown.
+     */
     TERMSRV_SET_LED = 0x0010,
+    /**
+     * Unknown.
+     */
     TERMSRV_SHADOW = 0x0020,
+    /**
+     * Unknown.
+     */
     TERMSRV_VKPACKET = 0x0040,
 }
 
@@ -63,6 +101,15 @@ export enum MouseState {
     MIDDLE_BUTTON_UP = BUTTON_3_UP,
 }
 
+/**
+ * Filter the mouse strokes intercepted.
+ * 
+ * The filter works as a bitfield, so combine flags using bitwise operators:
+ * ```ts
+ * const wheelsFilter = FilterMouseState.WHEEL | FilterMouseState.H_WHEEL; // Wheel events only.
+ * const filter = FilterMouseState.ALL ^ FilterMouseState.MOVE; // Excludes the movement strokes.
+ * ```
+ */
 export enum FilterMouseState {
     NONE = 0x0000,
     ALL = 0xFFFF,
@@ -79,9 +126,18 @@ export enum FilterMouseState {
     BUTTON_5_DOWN = 0x100,
     BUTTON_5_UP = 0x200,
 
+    /**
+     * Vertical wheel movement.
+     */
     WHEEL = 0x400,
+    /**
+     * Horizontal wheel movement.
+     */
     H_WHEEL = 0x800,
 
+    /**
+     * Mouse movement.
+     */
     MOVE = 0x1000,
 
     LEFT_BUTTON_DOWN = BUTTON_1_DOWN,
@@ -92,12 +148,33 @@ export enum FilterMouseState {
     MIDDLE_BUTTON_UP = BUTTON_3_UP,
 }
 
+/**
+ * Mouse flags altering the sent mouse strokes behaviour.
+ */
 export enum MouseFlag {
+    /**
+     * The mouse stroke coordinates sent are relative to the current mouse position.
+     */
     MOVE_RELATIVE = 0x000,
+    /**
+     * The mouse stroke coordinates send are absolution to the screen space.
+     */
     MOVE_ABSOLUTE = 0x001,
+    /**
+     * Unknown.
+     */
     VIRTUAL_DESKTOP = 0x002,
+    /**
+     * Unknown.
+     */
     ATTRIBUTES_CHANGED = 0x004,
+    /**
+     * Unknown.
+     */
     MOVE_NOCOALESCE = 0x008,
+    /**
+     * Unknown.
+     */
     TERMSRV_SRC_SHADOW = 0x100,
 }
 

@@ -126,7 +126,6 @@ void SetFilter(const CallbackInfo& info) {
 
   if (predicateName == "keyboard") predicate = interception_is_keyboard;
   else if (predicateName == "mouse") predicate = interception_is_mouse;
-  else if (predicateName == "invalid") predicate = interception_is_invalid;
   else throw TypeError::New(env, "Invalid 'predicate' value");
 
   InterceptionFilter filter = info[2].As<Number>().Uint32Value();

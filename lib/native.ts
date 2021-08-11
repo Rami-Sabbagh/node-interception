@@ -228,7 +228,7 @@ export interface InterceptionNative {
      */
     setFilter(context: Context, predicate: 'mouse', filter: FilterMouseState ): void;
     setFilter(context: Context, predicate: 'keyboard', filter: FilterKeyState ): void;
-    setFilter(context: Context, predicate: 'keyboard' | 'mouse' | 'invalid', filter: Filter): void;
+    setFilter(context: Context, predicate: 'keyboard' | 'mouse', filter: Filter): void;
 
     /**
      * Waits for a device to send a stroke, or null on failure.

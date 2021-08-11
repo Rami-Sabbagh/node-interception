@@ -1,15 +1,9 @@
 
 # node-interception
 
-A windows library for intercepting and controlling keyboards and mouses with multiple devices support.
+A **Windows** library for intercepting and controlling keyboards and mouses with multiple devices support.
 
 The project provides Node.js bindings for the original [Interception](https://github.com/oblitum/Interception) library by [Oblitum](https://github.com/oblitum), and supports it with a wrapper and TypeScript definitions.
-
-## System Requirements
-
-- A 32-bit (`ia32`) or 64-bit (`x64`) Windows machine.
-- Node 14 or later is prefered. (Node 12 might work)
-- The interception driver must be installed.
 
 ## Installation
 
@@ -25,15 +19,15 @@ npm install interception
 
 Using a command prompt with **Administrative Privileges**:
 
-> You'll have to restart for the driver installation to be complete.
-
 ```cmd
 yarn install-interception /install
-rem Or using npm
+rem or using npm
 npx install-interception /install
 ```
 
 > You can uninstall it later using `/uninstall` instead.
+
+You'll need to **restart** for the driver installation to be complete.
 
 ## Credits
 

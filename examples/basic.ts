@@ -24,7 +24,7 @@ async function listen() {
 
         if (!device || !stroke || (stroke?.type === 'keyboard' && stroke.code === SCANCODE_ESC)) break;
 
-        console.log(device.toString(), stroke);
+        console.log(`${device}`, stroke);
     }
 }
 

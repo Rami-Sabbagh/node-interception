@@ -1,6 +1,6 @@
 {
   "name": "node-interception",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A windows library for intercepting and controlling keyboards and mouses with multiple devices support.",
   "repository": "https://github.com/Rami-Sabbagh/node-interception.git",
   "homepage": "https://rami-sabbagh.github.io/node-interception/",

@@ -14,13 +14,12 @@ native.setFilter(context, 'keyboard', FilterKeyState.DOWN);
 while (true) {
     const device = native.wait(context);
     if (device === null) break;
-    const stroke = native.receive(context, device, 1);
+    const stroke = native.receive(context, device);
     if (stroke === null) break;
 
     if (stroke.type === 'keyboard' && stroke.code == SCANCODE_ESC) break;
-    if (stroke.type === 'invalid') continue;
 
-    native.send(context, device, stroke, 1);
+    native.send(context, device, stroke);
     console.log('Device:', device, 'Stroke: ', stroke);
 }
 

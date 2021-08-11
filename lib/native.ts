@@ -206,5 +206,5 @@ export interface InterceptionNative {
     isMouse(device: DeviceId): boolean;
 }
 
-const native: InterceptionNative = require('../build/Release/node_interception.node');
+const native: InterceptionNative = require('node-gyp-build')(__dirname);
 export default native;

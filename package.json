@@ -23,9 +23,11 @@
   "gypfile": true,
   "sideEffects": false,
   "scripts": {
+    "install": "node-gyp-build",
     "docs": "typedoc",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
-    "prepublishOnly": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json"
+    "build-lib": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "build-addon": "prebuildify --napi --arch=ia32 && prebuildify --napi --arch=x64",
+    "prepublishOnly": "yarn prebuild && yarn build"
   },
   "files": [
     "src/",
@@ -44,6 +46,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "node-addon-api": "^4.0.0"
+    "node-addon-api": "^4.0.0",
+    "node-gyp-build": "^4.2.3"
   }
 }

@@ -266,7 +266,7 @@ Value Send(const CallbackInfo& info) {
 Value Receive(const CallbackInfo& info) {
   Env env = info.Env();
 
-  if (info.Length() < 3) throw TypeError::New(env, "Wrong number of arguments");
+  if (info.Length() < 2) throw TypeError::New(env, "Wrong number of arguments");
   if (!info[0].IsExternal()) throw TypeError::New(env, "Invalid 'context' value");
   if (!info[1].IsNumber()) throw TypeError::New(env, "Invalid 'device' value");
 

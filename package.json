@@ -35,10 +35,8 @@
   "files": [
     "dist/",
     "prebuilds/",
-    "examples/",
     "binding.gyp",
     "src/",
-    "lib/",
     "interception/driver",
     "interception/LICENSE",
     "interception/README.md"

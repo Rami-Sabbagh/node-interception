@@ -7,10 +7,9 @@ The project provides Node.js bindings for the original [Interception](https://gi
 
 ## System Requirements
 
-- A Windows machine.
+- A 32-bit (`ia32`) or 64-bit (`x64`) Windows machine.
 - Node 14 or later is prefered. (Node 12 might work)
 - The interception driver must be installed.
-- Only 64-bit is currently supported.
 
 ## Credits
 

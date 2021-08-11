@@ -1,4 +1,4 @@
-import interception, { DeviceId, Filter, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE } from './native';
+import interception, { DeviceId, Filter, FilterKeyState, FilterMouseState, MAX_DEVICE, MAX_KEYBOARD, MAX_MOUSE } from './native';
 import { Device, Keyboard, Mouse } from './device';
 
 export default class Interception {
@@ -9,6 +9,8 @@ export default class Interception {
         return this._context;
     }
 
+    setFilter(type: 'mouse', filter: FilterMouseState): void;
+    setFilter(type: 'keyboard', filter: FilterKeyState): void;
     setFilter(type: 'keyboard' | 'mouse', filter: Filter): void {
         interception.setFilter(this.context, type, filter);
     }

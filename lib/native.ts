@@ -1,6 +1,6 @@
 export type Context = External;
 export type DeviceId = number;
-export type Filter = number;
+export type Filter = FilterKeyState | FilterMouseState;
 
 export const MAX_KEYBOARD = 10;
 export const MAX_MOUSE = 10;
@@ -230,6 +230,8 @@ export interface InterceptionNative {
      * Sets the stroke events that get intercepted by this instance of the library.
      * Each predicate has it's own filters state, initially set to 0 (NONE).
      */
+    setFilter(context: Context, predicate: 'mouse', filter: FilterMouseState ): void;
+    setFilter(context: Context, predicate: 'keyboard', filter: FilterKeyState ): void;
     setFilter(context: Context, predicate: 'keyboard' | 'mouse' | 'invalid', filter: Filter): void;
 
     /**

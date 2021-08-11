@@ -25,7 +25,7 @@
   "scripts": {
     "install": "node-gyp-build",
     "docs": "typedoc",
-    "build-lib": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "build-lib": "tsc -p tsconfig.json && tsc -p tsconfig-esm.json",
     "build-addon": "prebuildify --napi --arch=ia32 && prebuildify --napi --arch=x64",
     "prepublishOnly": "yarn prebuild && yarn build"
   },

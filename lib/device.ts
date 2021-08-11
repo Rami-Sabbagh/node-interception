@@ -33,12 +33,12 @@ export class Device<TStroke extends Stroke = Stroke> {
         return interception.getFilter(this.context, this.id);
     }
 
-    send(stroke: TStroke, nstroke = 1): boolean {
-        return interception.send(this.context, this.id, stroke, nstroke);
+    send(stroke: TStroke): boolean {
+        return interception.send(this.context, this.id, stroke);
     }
 
-    receive(nstroke = 1): TStroke | null {
-        return interception.receive(this.context, this.id, nstroke);
+    receive(): TStroke | null {
+        return interception.receive(this.context, this.id);
     }
 
     getHardwareId(): string | null {

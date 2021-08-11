@@ -258,12 +258,12 @@ export interface InterceptionNative {
     /**
      * Sends a stroke under a specific device.
      */
-    send<TStroke extends Stroke>(context: Context, device: DeviceId, stroke: TStroke, nstroke: number): boolean;
+    send<TStroke extends Stroke>(context: Context, device: DeviceId, stroke: TStroke): boolean;
     /**
      * Receives the stroke sent by a specific device, after waiting for it using one of the wait methods.
      * @returns null on failure.
      */
-    receive<TStroke extends Stroke>(context: Context, device: DeviceId, nstroke: number): TStroke | null;
+    receive<TStroke extends Stroke>(context: Context, device: DeviceId): TStroke | null;
 
     /**
      * Gets the hardware id of a specific device, which may help on disambiguation of device input.

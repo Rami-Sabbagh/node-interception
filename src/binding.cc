@@ -248,21 +248,19 @@ void unwrapStroke(Env& env, Object& obj, InterceptionStroke& stroke) {
 Value Send(const CallbackInfo& info) {
   Env env = info.Env();
 
-  if (info.Length() < 4) throw TypeError::New(env, "Wrong number of arguments");
+  if (info.Length() < 3) throw TypeError::New(env, "Wrong number of arguments");
   if (!info[0].IsExternal()) throw TypeError::New(env, "Invalid 'context' value");
   if (!info[1].IsNumber()) throw TypeError::New(env, "Invalid 'device' value");
   if (!info[2].IsObject()) throw TypeError::New(env, "Invalid 'stroke' value");
-  if (!info[3].IsNumber()) throw TypeError::New(env, "Invalid 'nstroke' value");
 
   InterceptionContext context = *info[0].As<External<InterceptionContext>>().Data();
   InterceptionDevice device = info[1].As<Number>().Uint32Value();
-  InterceptionDevice nstroke = info[3].As<Number>().Uint32Value();
 
   InterceptionStroke stroke;
   Object strokeObj = info[2].As<Object>();
   unwrapStroke(env, strokeObj, stroke);
 
-  int status = interception_send(context, device, &stroke, nstroke);
+  int status = interception_send(context, device, &stroke, 1);
   return Boolean::New(env, status ? true : false);
 }
 
@@ -272,14 +270,12 @@ Value Receive(const CallbackInfo& info) {
   if (info.Length() < 3) throw TypeError::New(env, "Wrong number of arguments");
   if (!info[0].IsExternal()) throw TypeError::New(env, "Invalid 'context' value");
   if (!info[1].IsNumber()) throw TypeError::New(env, "Invalid 'device' value");
-  if (!info[2].IsNumber()) throw TypeError::New(env, "Invalid 'nstroke' value");
 
   InterceptionContext context = *info[0].As<External<InterceptionContext>>().Data();
   InterceptionDevice device = info[1].As<Number>().Uint32Value();
-  InterceptionDevice nstroke = info[2].As<Number>().Uint32Value();
 
   InterceptionStroke stroke;
-  int status = interception_receive(context, device, &stroke, nstroke);
+  int status = interception_receive(context, device, &stroke, 1);
 
   if (status == 0) return env.Null();
   return wrapStroke(env, stroke, device);

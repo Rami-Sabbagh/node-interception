@@ -1,7 +1,7 @@
 import * as os from 'os';
 os.setPriority(os.constants.priority.PRIORITY_HIGH);
 
-import { Interception, FilterKeyState, FilterMouseState, MouseFlag, MouseState } from 'interception';
+import { Interception, FilterKeyState, FilterMouseState, MouseFlag, MouseState } from '../lib';
 
 const interception = new Interception();
 

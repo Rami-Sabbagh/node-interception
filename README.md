@@ -12,7 +12,7 @@ The package provides Node.js bindings for the original [Interception](https://gi
 import * as os from 'os';
 os.setPriority(os.constants.priority.PRIORITY_HIGH);
 
-import { Interception, FilterKeyState, FilterMouseState } from 'interception';
+import { Interception, FilterKeyState, FilterMouseState } from 'node-interception';
 const interception = new Interception();
 
 // Display the list of available devices.
@@ -70,9 +70,9 @@ As the original library author (Oblitum) written:
 ### Installing the package
 
 ```cmd
-yarn add interception
+yarn add node-interception
 rem -- or using npm
-npm install interception
+npm install node-interception
 ```
 
 ### Installing the driver

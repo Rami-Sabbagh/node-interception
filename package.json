@@ -1,5 +1,5 @@
 {
-  "name": "interception",
+  "name": "node-interception",
   "version": "0.0.1",
   "description": "A windows library for intercepting and controlling keyboards and mouses with multiple devices support.",
   "repository": "https://github.com/Rami-Sabbagh/node-interception.git",
@@ -13,7 +13,8 @@
     "mouse",
     "addon",
     "windows",
-    "binding"
+    "binding",
+    "hid"
   ],
   "main": "dist/cjs/lib/index.js",
   "module": "dist/esm/lib/index.js",

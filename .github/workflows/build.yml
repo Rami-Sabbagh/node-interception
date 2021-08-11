@@ -2,8 +2,13 @@ name: Build
 on: push
 
 jobs:
-  build:
+  build-addon:
+    name: Build addon (C++)
     runs-on: windows-latest
+    strategy:
+      matrix:
+        arch: ['x64', 'ia32']
+
     steps:
       - uses: actions/checkout@v2
 
@@ -15,5 +20,23 @@ jobs:
       - name: Install the dependencies
         run: yarn
 
-      - name: Build
-        run: yarn build
+      - name: Prebuild addon
+        run: yarn prebuildify --napi --arch=${{ matrix.arch }}
+
+  build-lib:
+    name: Build lib (TS Wrapper)
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - name: Install the dependencies
+        run: yarn --ignore-scripts
+      
+      - name: Build lib (ts wrapper)
+        run: yarn build-lib

@@ -18,7 +18,7 @@ jobs:
           node-version: 14.x
 
       - name: Install the dependencies
-        run: yarn
+        run: yarn --ignore-scripts
 
       - name: Prebuild addon
         run: yarn prebuildify --napi --arch=${{ matrix.arch }}

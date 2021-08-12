@@ -1,7 +1,12 @@
 
 # node-interception
 
-![[GitHub]](https://badgen.net/badge/GitHub/open%20source?icon=github) ![[Discord]](https://badgen.net/discord/members/8UXVB436u2?icon=discord&label=Discord)
+![[GitHub]](https://flat.badgen.net/badge/icon/GitHub?icon=github&color=black&label)
+![[NPM]](https://flat.badgen.net/npm/v/node-interception?icon=npm&color=red&label)
+![[License]](https://flat.badgen.net/github/license/Rami-Sabbagh/node-interception?color=yellow&label)
+![[Documentation]](https://flat.badgen.net/npm/types/node-interception?icon=typescript&label)
+![[Discord]](https://flat.badgen.net/badge/icon/Discord?icon=discord&label)
+![[Dependabot]](https://flat.badgen.net/github/dependabot/Rami-Sabbagh/node-interception?icon=dependabot&label)
 
 A **windows** library for intercepting and controlling keyboards and mouses with multiple devices support.
 
@@ -115,8 +120,12 @@ The package and repository of this module contains a redistribution of the inter
 - [Oblitum] for creating the original interception library.
 - [Rami Sabbagh] for writing the binding and wrapper.
 
+[NPM]: https://www.npmjs.com/package/node-interception
 [GitHub]: https://github.com/Rami-Sabbagh/node-interception/
 [Documentation]: https://rami-sabbagh.github.io/node-interception/
+[License]: https://github.com/Rami-Sabbagh/node-interception/blob/main/LICENSE
+[Actions]: https://github.com/Rami-Sabbagh/node-interception/actions
+[Dependabot]: https://github.com/Rami-Sabbagh/node-interception/network/updates
 [Discord]: https://discord.gg/8UXVB436u2
 [Interception]: https://github.com/oblitum/Interception
 [Oblitum]: https://github.com/oblitum

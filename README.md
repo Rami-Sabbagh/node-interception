@@ -79,9 +79,9 @@ The API documentation is generated using [TypeDoc](https://typedoc.org/) and ava
 
 ## Community
 
-A small [discord] server has been created in the hope of finding a community, so please don't hesitate to join it!
+A small [discord] server has been created in the hope of finding a community, so please don't hesitate to join it :)
 
-You can ask for help there using the library, share your work, and provide suggestions on what improvements can be done :)
+You can ask for help there using the library, share your work, and give suggestions on what improvements can be done!
 
 ## Installation
 

@@ -1,7 +1,9 @@
 
 # node-interception
 
-A **Windows** library for intercepting and controlling keyboards and mouses with multiple devices support.
+![[GitHub]](https://badgen.net/badge/GitHub/open%20source?icon=github) ![[Discord]](https://badgen.net/discord/members/8UXVB436u2?icon=discord&label=Discord)
+
+A **windows** library for intercepting and controlling keyboards and mouses with multiple devices support.
 
 The package provides Node.js bindings for the original [Interception](https://github.com/oblitum/Interception) library by [Oblitum](https://github.com/oblitum), and supports it with a wrapper and TypeScript definitions.
 
@@ -52,7 +54,7 @@ listen().catch(console.error);
 
 ## Interception use cases
 
-As the original library author (Oblitum) written:
+As the original library author ([Oblitum]) written:
 
 > Interception has been used around the world in cases I couldn't imagine when I first created it:
 >
@@ -92,9 +94,13 @@ You'll need to **restart** for the driver installation to be complete.
 
 ## Documentation
 
-The API documentation is generated using [TypeDoc](https://typedoc.org/) and available on [GitHub Pages](https://rami-sabbagh.github.io/node-interception/).
+The API documentation is generated using [TypeDoc](https://typedoc.org/) and available on [GitHub Pages][Documentation].
 
-Don't forget to give the package a star [GitHub](https://github.com/Rami-Sabbagh/node-interception/)!
+## Community
+
+A small [discord] server has been created in the hope of finding a community, so please don't hesitate to join it!
+
+You can ask for help there using the library, share your work, and provide suggestions on what improvements can be done :)
 
 ## License
 
@@ -106,5 +112,12 @@ The package and repository of this module contains a redistribution of the inter
 
 ## Credits
 
-- [Oblitum](https://github.com/oblitum) for creating the original interception library.
-- [Rami Sabbagh](https://github.com/Rami-Sabbagh) for writing the binding and wrapper.
+- [Oblitum] for creating the original interception library.
+- [Rami Sabbagh] for writing the binding and wrapper.
+
+[GitHub]: https://github.com/Rami-Sabbagh/node-interception/
+[Documentation]: https://rami-sabbagh.github.io/node-interception/
+[Discord]: https://discord.gg/8UXVB436u2
+[Interception]: https://github.com/oblitum/Interception
+[Oblitum]: https://github.com/oblitum
+[Rami Sabbagh]: https://github.com/Rami-Sabbagh

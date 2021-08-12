@@ -68,6 +68,16 @@ As the original library author ([Oblitum]) written:
 > - Home theater automation.
 > - ...
 
+## Documentation
+
+The API documentation is generated using [TypeDoc](https://typedoc.org/) and available on [GitHub Pages][Documentation].
+
+## Community
+
+A small [discord] server has been created in the hope of finding a community, so please don't hesitate to join it!
+
+You can ask for help there using the library, share your work, and provide suggestions on what improvements can be done :)
+
 ## Installation
 
 ### Installing the package
@@ -91,16 +101,6 @@ npx install-interception /install
 > You can uninstall it later using `/uninstall` instead.
 
 You'll need to **restart** for the driver installation to be complete.
-
-## Documentation
-
-The API documentation is generated using [TypeDoc](https://typedoc.org/) and available on [GitHub Pages][Documentation].
-
-## Community
-
-A small [discord] server has been created in the hope of finding a community, so please don't hesitate to join it!
-
-You can ask for help there using the library, share your work, and provide suggestions on what improvements can be done :)
 
 ## License
 

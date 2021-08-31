@@ -281,6 +281,6 @@ export interface InterceptionNative {
     isMouse(device: DeviceId): boolean;
 }
 
-import { resolve } from 'path';
-const native: InterceptionNative = require('node-gyp-build')(resolve(__dirname, '../'));
+import {resolve} from 'path';
+const native: InterceptionNative = require('node-gyp-build')(resolve(__dirname, __filename.endsWith('.ts') ? '../' : '../../../'));
 export default native;

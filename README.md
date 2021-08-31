@@ -1,12 +1,12 @@
 
 # node-interception
 
-![[GitHub]](https://flat.badgen.net/badge/icon/GitHub?icon=github&color=black&label)
-![[NPM]](https://flat.badgen.net/npm/v/node-interception?icon=npm&color=red&label)
-![[License]](https://flat.badgen.net/github/license/Rami-Sabbagh/node-interception?color=yellow&label)
-![[Documentation]](https://flat.badgen.net/npm/types/node-interception?icon=typescript&label)
-![[Discord]](https://flat.badgen.net/badge/icon/Discord?icon=discord&label)
-![[Dependabot]](https://flat.badgen.net/github/dependabot/Rami-Sabbagh/node-interception?icon=dependabot&label)
+[![GitHub](https://flat.badgen.net/badge/icon/GitHub?icon=github&color=black&label)][GitHub]
+[![NPM](https://flat.badgen.net/npm/v/node-interception?icon=npm&color=red&label)][NPM]
+[![License](https://flat.badgen.net/github/license/Rami-Sabbagh/node-interception?color=yellow&label)][License]
+[![Documentation](https://flat.badgen.net/npm/types/node-interception?icon=typescript&label)][Documentation]
+[![Discord](https://flat.badgen.net/badge/icon/Discord?icon=discord&label)][Discord]
+[![Dependabot](https://flat.badgen.net/github/dependabot/Rami-Sabbagh/node-interception?icon=dependabot&label)][Dependabot]
 
 A **windows** library for intercepting and controlling keyboards and mouses with multiple devices support.
 

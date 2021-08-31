@@ -98,9 +98,10 @@ npm install node-interception
 Using a command prompt with **Administrative Privileges**:
 
 ```cmd
-yarn install-interception /install
-rem -- or using npm
-npx install-interception /install
+rem -- Please note that yarn requires running the command in a project where the package is installed
+yarn node-interception /install
+rem -- or using npm (doesn't need a project)
+npx node-interception /install
 ```
 
 > You can uninstall it later using `/uninstall` instead.

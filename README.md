@@ -39,7 +39,10 @@ async function listen() {
         const device = await interception.wait();
         const stroke = device?.receive();
 
-        if (!device || !stroke || (stroke?.type === 'keyboard' && stroke.code === SCANCODE_ESC)) break;
+        if (!device || !stroke || (stroke?.type === 'keyboard' && stroke.code === SCANCODE_ESC)) {
+            interception.destroy();
+            break;
+        }
 
         console.log(`${device}`, stroke);
     }

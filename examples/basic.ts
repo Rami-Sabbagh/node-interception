@@ -26,6 +26,8 @@ async function listen() {
 
         console.log(`${device}`, stroke);
     }
+
+    interception.destroy();
 }
 
 // Start listening for keyboard and mouse strokes.

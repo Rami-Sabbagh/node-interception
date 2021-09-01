@@ -39,13 +39,12 @@ async function listen() {
         const device = await interception.wait();
         const stroke = device?.receive();
 
-        if (!device || !stroke || (stroke?.type === 'keyboard' && stroke.code === SCANCODE_ESC)) {
-            interception.destroy();
-            break;
-        }
+        if (!device || !stroke || (stroke?.type === 'keyboard' && stroke.code === SCANCODE_ESC)) break;
 
         console.log(`${device}`, stroke);
     }
+
+    interception.destroy();
 }
 
 // Start listening for keyboard and mouse strokes.

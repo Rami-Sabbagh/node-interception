@@ -9,12 +9,8 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "monthly"
-    reviewers:
-      - "rami-sabbagh"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
-    reviewers:
-      - "rami-sabbagh"

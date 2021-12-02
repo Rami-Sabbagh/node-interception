@@ -1,0 +1,96 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Node-Interception - v2.0.4</title><meta name="description" content="Documentation for Node-Interception - v2.0.4"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">Node-Interception - v2.0.4</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>Node-Interception - v2.0.4</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#node-interception" id="node-interception" style="color: inherit; text-decoration: none;">
+  <h1>node-interception</h1>
+</a>
+<p><a href="https://github.com/Rami-Sabbagh/node-interception/"><img src="https://flat.badgen.net/badge/icon/GitHub?icon=github&color=black&label" alt="GitHub"></a>
+<a href="https://www.npmjs.com/package/node-interception"><img src="https://flat.badgen.net/npm/v/node-interception?icon=npm&color=red&label" alt="NPM"></a>
+<a href="https://github.com/Rami-Sabbagh/node-interception/blob/main/LICENSE"><img src="https://flat.badgen.net/github/license/Rami-Sabbagh/node-interception?color=yellow&label" alt="License"></a>
+<a href="https://rami-sabbagh.github.io/node-interception/"><img src="https://flat.badgen.net/npm/types/node-interception?icon=typescript&label" alt="Documentation"></a>
+<a href="https://discord.gg/8UXVB436u2"><img src="https://flat.badgen.net/badge/icon/Discord?icon=discord&label" alt="Discord"></a>
+<a href="https://github.com/Rami-Sabbagh/node-interception/network/updates"><img src="https://flat.badgen.net/github/dependabot/Rami-Sabbagh/node-interception?icon=dependabot&label" alt="Dependabot"></a></p>
+<p>A <strong>windows</strong> library for intercepting and controlling keyboards and mouses with multiple devices support.</p>
+<p>The package provides Node.js bindings for the original <a href="https://github.com/oblitum/Interception">Interception</a> library by <a href="https://github.com/oblitum">Oblitum</a>, and supports it with a wrapper and TypeScript definitions.</p>
+
+<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+  <h2>Example</h2>
+</a>
+<pre><code class="language-ts"><span class="hl-0">// Increase the process priority to prevent input lagging.</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">*</span><span class="hl-2"> </span><span class="hl-1">as</span><span class="hl-2"> </span><span class="hl-4">os</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-5">&#39;os&#39;</span><span class="hl-2">;</span><br/><span class="hl-4">os</span><span class="hl-2">.</span><span class="hl-6">setPriority</span><span class="hl-2">(</span><span class="hl-4">os</span><span class="hl-2">.</span><span class="hl-4">constants</span><span class="hl-2">.</span><span class="hl-4">priority</span><span class="hl-2">.</span><span class="hl-7">PRIORITY_HIGH</span><span class="hl-2">);</span><br/><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-4">Interception</span><span class="hl-2">, </span><span class="hl-4">FilterKeyState</span><span class="hl-2">, </span><span class="hl-4">FilterMouseState</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-5">&#39;node-interception&#39;</span><span class="hl-2">;</span><br/><span class="hl-3">const</span><span class="hl-2"> </span><span class="hl-7">interception</span><span class="hl-2"> = </span><span class="hl-3">new</span><span class="hl-2"> </span><span class="hl-6">Interception</span><span class="hl-2">();</span><br/><br/><span class="hl-0">// Display the list of available devices.</span><br/><span class="hl-4">console</span><span class="hl-2">.</span><span class="hl-6">log</span><span class="hl-2">(</span><span class="hl-5">&#39;Devices:&#39;</span><span class="hl-2">, </span><span class="hl-4">interception</span><span class="hl-2">.</span><span class="hl-6">getDevices</span><span class="hl-2">().</span><span class="hl-6">map</span><span class="hl-2">(</span><span class="hl-4">device</span><span class="hl-2"> </span><span class="hl-3">=&gt;</span><span class="hl-2"> </span><span class="hl-5">`</span><span class="hl-3">${</span><span class="hl-4">device</span><span class="hl-3">}</span><span class="hl-5">`</span><span class="hl-2">));</span><br/><br/><span class="hl-0">// Enable the capturing of all strokes.</span><br/><span class="hl-4">interception</span><span class="hl-2">.</span><span class="hl-6">setFilter</span><span class="hl-2">(</span><span class="hl-5">&#39;keyboard&#39;</span><span class="hl-2">, </span><span class="hl-4">FilterKeyState</span><span class="hl-2">.</span><span class="hl-7">ALL</span><span class="hl-2">);</span><br/><span class="hl-4">interception</span><span class="hl-2">.</span><span class="hl-6">setFilter</span><span class="hl-2">(</span><span class="hl-5">&#39;mouse&#39;</span><span class="hl-2">, </span><span class="hl-4">FilterMouseState</span><span class="hl-2">.</span><span class="hl-7">ALL</span><span class="hl-2">);</span><br/><br/><span class="hl-3">const</span><span class="hl-2"> </span><span class="hl-7">SCANCODE_ESC</span><span class="hl-2"> = </span><span class="hl-8">0x01</span><span class="hl-2">;</span><br/><br/><span class="hl-3">async</span><span class="hl-2"> </span><span class="hl-3">function</span><span class="hl-2"> </span><span class="hl-6">listen</span><span class="hl-2">() {</span><br/><span class="hl-2">    </span><span class="hl-4">console</span><span class="hl-2">.</span><span class="hl-6">info</span><span class="hl-2">(</span><span class="hl-5">&#39;Press any key or move the mouse to generate strokes.&#39;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-4">console</span><span class="hl-2">.</span><span class="hl-6">info</span><span class="hl-2">(</span><span class="hl-5">&#39;Press ESC to exit and restore back control.&#39;</span><span class="hl-2">);</span><br/><br/><span class="hl-2">    </span><span class="hl-1">while</span><span class="hl-2"> (</span><span class="hl-3">true</span><span class="hl-2">) {</span><br/><span class="hl-2">        </span><span class="hl-3">const</span><span class="hl-2"> </span><span class="hl-7">device</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-4">interception</span><span class="hl-2">.</span><span class="hl-6">wait</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-3">const</span><span class="hl-2"> </span><span class="hl-7">stroke</span><span class="hl-2"> = </span><span class="hl-4">device</span><span class="hl-2">?.</span><span class="hl-6">receive</span><span class="hl-2">();</span><br/><br/><span class="hl-2">        </span><span class="hl-1">if</span><span class="hl-2"> (!</span><span class="hl-4">device</span><span class="hl-2"> || !</span><span class="hl-4">stroke</span><span class="hl-2"> || (</span><span class="hl-4">stroke</span><span class="hl-2">?.</span><span class="hl-4">type</span><span class="hl-2"> === </span><span class="hl-5">&#39;keyboard&#39;</span><span class="hl-2"> &amp;&amp; </span><span class="hl-4">stroke</span><span class="hl-2">.</span><span class="hl-4">code</span><span class="hl-2"> === </span><span class="hl-7">SCANCODE_ESC</span><span class="hl-2">)) </span><span class="hl-1">break</span><span class="hl-2">;</span><br/><br/><span class="hl-2">        </span><span class="hl-4">console</span><span class="hl-2">.</span><span class="hl-6">log</span><span class="hl-2">(</span><span class="hl-5">`</span><span class="hl-3">${</span><span class="hl-4">device</span><span class="hl-3">}</span><span class="hl-5">`</span><span class="hl-2">, </span><span class="hl-4">stroke</span><span class="hl-2">);</span><br/><span class="hl-2">    }</span><br/><br/><span class="hl-2">    </span><span class="hl-4">interception</span><span class="hl-2">.</span><span class="hl-6">destroy</span><span class="hl-2">();</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-0">// Start listening for keyboard and mouse strokes.</span><br/><span class="hl-6">listen</span><span class="hl-2">().</span><span class="hl-6">catch</span><span class="hl-2">(</span><span class="hl-4">console</span><span class="hl-2">.</span><span class="hl-4">error</span><span class="hl-2">);</span>
+</code></pre>
+
+<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+  <h2>Features</h2>
+</a>
+<ul>
+<li>Contains prebuilt binaries for 32-bit (<code>ia32</code>) and 64-bit (<code>x64</code>) Windows machines.</li>
+<li>Written using N-API and <code>node-addon-api</code> so it should work with different node versions and electron without rebuilding.</li>
+<li>Written in TypeScript to provide enhanced IDE support.</li>
+<li>Allows working with each mouse and keyboard as independent devices, so different logic can be used for each keyboard/mouse.</li>
+<li>Allows blocking or modifying the devices strokes.</li>
+</ul>
+
+<a href="#interception-use-cases" id="interception-use-cases" style="color: inherit; text-decoration: none;">
+  <h2>Interception use cases</h2>
+</a>
+<p>As the original library author (<a href="https://github.com/oblitum">Oblitum</a>) written:</p>
+<blockquote>
+<p>Interception has been used around the world in cases I couldn&#39;t imagine when I first created it:</p>
+<ul>
+<li>Helping people with accessibility limitations, tailoring systems according to their limitations.</li>
+<li>By companies in aviation training, to connect many devices at once and customizing each one.</li>
+<li>By companies providing SCADA (supervisory control and data acquisition) solutions.</li>
+<li>In game applications like BOTs and control customization.</li>
+<li>To construct an emacs mode of the system.</li>
+<li>To customize supermarket cashier&#39;s systems.</li>
+<li>In doctoral thesis about typing pattern recognition for security applications.</li>
+<li>Home theater automation.</li>
+<li>...</li>
+</ul>
+</blockquote>
+
+<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+  <h2>Documentation</h2>
+</a>
+<p>The API documentation is generated using <a href="https://typedoc.org/">TypeDoc</a> and available on <a href="https://rami-sabbagh.github.io/node-interception/">GitHub Pages</a>.</p>
+
+<a href="#community" id="community" style="color: inherit; text-decoration: none;">
+  <h2>Community</h2>
+</a>
+<p>A small <a href="https://discord.gg/8UXVB436u2">discord</a> server has been created in the hope of finding a community, so please don&#39;t hesitate to join it :)</p>
+<p>You can ask for help there using the library, share your work, and give suggestions on what improvements can be done!</p>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+
+<a href="#installing-the-package" id="installing-the-package" style="color: inherit; text-decoration: none;">
+  <h3>Installing the package</h3>
+</a>
+<pre><code class="language-cmd"><span class="hl-2">yarn </span><span class="hl-6">add</span><span class="hl-2"> </span><span class="hl-4">node</span><span class="hl-2">-</span><span class="hl-4">interception</span><br/><span class="hl-4">rem</span><span class="hl-2"> --</span><span class="hl-4"> or</span><span class="hl-2"> using npm</span><br/><span class="hl-2">npm install </span><span class="hl-4">node</span><span class="hl-2">-</span><span class="hl-4">interception</span>
+</code></pre>
+
+<a href="#installing-the-driver" id="installing-the-driver" style="color: inherit; text-decoration: none;">
+  <h3>Installing the driver</h3>
+</a>
+<p>Using a command prompt with <strong>Administrative Privileges</strong>:</p>
+<pre><code class="language-cmd"><span class="hl-2">npx </span><span class="hl-4">node</span><span class="hl-2">-</span><span class="hl-4">interception</span><span class="hl-2"> /</span><span class="hl-4">install</span>
+</code></pre>
+<blockquote>
+<p>You can uninstall it later using <code>/uninstall</code> instead.</p>
+</blockquote>
+<p>You&#39;ll need to <strong>restart</strong> for the driver installation to be complete.</p>
+
+<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+  <h2>License</h2>
+</a>
+<p>The binding and wrapper are licensed under <code>LGPL-3.0-or-later</code>, check the <code>LICENSE</code> file.</p>
+<p>The original Interception library is licensed under <code>LGPL-3.0</code> too for un-commercial usage, and has a seperate license for commercial usage, check it in it&#39;s repository.</p>
+<p>The package and repository of this module contains a redistribution of the interception library as that&#39;s permitted by the <code>LGPL-3.0</code> license, please create an issue if that&#39;s wrong.</p>
+
+<a href="#credits" id="credits" style="color: inherit; text-decoration: none;">
+  <h2>Credits</h2>
+</a>
+<ul>
+<li><a href="https://github.com/oblitum">Oblitum</a> for creating the original interception library.</li>
+<li><a href="https://github.com/Rami-Sabbagh">Rami Sabbagh</a> for writing the binding and wrapper.</li>
+</ul>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-enum"><a href="enums/FilterKeyState.html" class="tsd-kind-icon">Filter<wbr/>Key<wbr/>State</a></li><li class="tsd-kind-enum"><a href="enums/FilterMouseState.html" class="tsd-kind-icon">Filter<wbr/>Mouse<wbr/>State</a></li><li class="tsd-kind-enum"><a href="enums/KeyState.html" class="tsd-kind-icon">Key<wbr/>State</a></li><li class="tsd-kind-enum"><a href="enums/MouseFlag.html" class="tsd-kind-icon">Mouse<wbr/>Flag</a></li><li class="tsd-kind-enum"><a href="enums/MouseState.html" class="tsd-kind-icon">Mouse<wbr/>State</a></li><li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/Device.html" class="tsd-kind-icon">Device</a></li><li class="tsd-kind-class"><a href="classes/Interception.html" class="tsd-kind-icon">Interception</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Keyboard" class="tsd-kind-icon">Keyboard</a></li><li class="tsd-kind-type-alias"><a href="modules.html#KeyboardStroke" class="tsd-kind-icon">Keyboard<wbr/>Stroke</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Mouse" class="tsd-kind-icon">Mouse</a></li><li class="tsd-kind-type-alias"><a href="modules.html#MouseStroke" class="tsd-kind-icon">Mouse<wbr/>Stroke</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Stroke" class="tsd-kind-icon">Stroke</a></li><li class="tsd-kind-variable"><a href="modules.html#MAX_DEVICE" class="tsd-kind-icon">MAX_<wbr/>DEVICE</a></li><li class="tsd-kind-variable"><a href="modules.html#MAX_KEYBOARD" class="tsd-kind-icon">MAX_<wbr/>KEYBOARD</a></li><li class="tsd-kind-variable"><a href="modules.html#MAX_MOUSE" class="tsd-kind-icon">MAX_<wbr/>MOUSE</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>

@@ -43,7 +43,7 @@
     "interception/README.md"
   ],
   "devDependencies": {
-    "@types/node": "^16.4.13",
+    "@types/node": "^17.0.6",
     "node-gyp": "^8.1.0",
     "prebuildify": "^5.0.0",
     "ts-node": "^10.2.0",

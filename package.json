@@ -44,7 +44,7 @@
   ],
   "devDependencies": {
     "@types/node": "^16.4.13",
-    "node-gyp": "^8.1.0",
+    "node-gyp": "^9.0.0",
     "prebuildify": "^5.0.0",
     "ts-node": "^10.2.0",
     "typedoc": "^0.22.2",

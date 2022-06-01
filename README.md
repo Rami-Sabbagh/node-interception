@@ -5,7 +5,6 @@
 [![NPM](https://flat.badgen.net/npm/v/node-interception?icon=npm&color=red&label)][NPM]
 [![License](https://flat.badgen.net/github/license/Rami-Sabbagh/node-interception?color=yellow&label)][License]
 [![Documentation](https://flat.badgen.net/npm/types/node-interception?icon=typescript&label)][Documentation]
-[![Discord](https://flat.badgen.net/badge/icon/Discord?icon=discord&label)][Discord]
 [![Dependabot](https://flat.badgen.net/github/dependabot/Rami-Sabbagh/node-interception?icon=dependabot&label)][Dependabot]
 
 A **windows** library for intercepting and controlling keyboards and mouses with multiple devices support.
@@ -79,11 +78,12 @@ As the original library author ([Oblitum]) written:
 
 The API documentation is generated using [TypeDoc](https://typedoc.org/) and available on [GitHub Pages][Documentation].
 
-## Community
+## When in need for more help
 
-A small [discord] server has been created in the hope of finding a community, so please don't hesitate to join it :)
+You can create an issue here or email me on [rami.sab07@gmail.com](mailto:rami.sab07@gmail.com).
 
-You can ask for help there using the library, share your work, and give suggestions on what improvements can be done!
+Please mind that I made this project in my free time for nothing in return.
+And that it usually takes up to 5 days for me to reply back (possibly more on some occasions).
 
 ## Installation
 
@@ -111,9 +111,9 @@ You'll need to **restart** for the driver installation to be complete.
 
 The binding and wrapper are licensed under `LGPL-3.0-or-later`, check the `LICENSE` file.
 
-The original Interception library is licensed under `LGPL-3.0` too for un-commercial usage, and has a seperate license for commercial usage, check it in it's repository.
+The original Interception library is licensed under `LGPL-3.0` too for un-commercial usage and has a seperate license for commercial usage, check it in it's repository.
 
-The package and repository of this module contains a redistribution of the interception library as that's permitted by the `LGPL-3.0` license, please create an issue if that's wrong.
+The package and repository of this module contains a redistribution of the interception library as that's permitted by the `LGPL-3.0` license, please create an issue if that's incorrect.
 
 ## Credits
 
@@ -126,7 +126,6 @@ The package and repository of this module contains a redistribution of the inter
 [License]: https://github.com/Rami-Sabbagh/node-interception/blob/main/LICENSE
 [Actions]: https://github.com/Rami-Sabbagh/node-interception/actions
 [Dependabot]: https://github.com/Rami-Sabbagh/node-interception/network/updates
-[Discord]: https://discord.gg/8UXVB436u2
 [Interception]: https://github.com/oblitum/Interception
 [Oblitum]: https://github.com/oblitum
 [Rami Sabbagh]: https://github.com/Rami-Sabbagh

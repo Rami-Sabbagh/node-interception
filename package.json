@@ -51,7 +51,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "node-addon-api": "^4.0.0",
+    "node-addon-api": "^5.0.0",
     "node-gyp-build": "^4.2.3"
   },
   "engines": {
